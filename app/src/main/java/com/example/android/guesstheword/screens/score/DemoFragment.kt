@@ -10,7 +10,7 @@ import com.example.android.guesstheword.R
 import com.example.android.guesstheword.databinding.ScoreFragmentBinding
 import kotlinx.android.synthetic.main.score_fragment.view.*
 
-class Demo : Fragment() {
+class DemoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val binding: ScoreFragmentBinding = DataBindingUtil.inflate(

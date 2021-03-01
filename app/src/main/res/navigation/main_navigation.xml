@@ -35,7 +35,7 @@
             app:popUpTo="@+id/title_destination" />
         <action
             android:id="@+id/action_game_to_demo"
-            app:destination="@id/demo"
+            app:destination="@id/demo_destination"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:launchSingleTop="true"
@@ -62,8 +62,8 @@
             app:argType="integer" />
     </fragment>
     <fragment
-        android:id="@+id/demo"
-        android:name="com.example.android.guesstheword.screens.score.Demo"
+        android:id="@+id/demo_destination"
+        android:name="com.example.android.guesstheword.screens.score.DemoFragment"
         android:label="demo_fragment"
         tools:layout="@layout/score_fragment">
         <action
