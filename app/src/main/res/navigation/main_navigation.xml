@@ -33,6 +33,15 @@
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@+id/title_destination" />
+        <action
+            android:id="@+id/action_game_to_demo"
+            app:destination="@id/demo"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@+id/title_destination" />
     </fragment>
     <fragment
         android:id="@+id/score_destination"
@@ -51,5 +60,19 @@
             android:name="score"
             android:defaultValue="0"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/demo"
+        android:name="com.example.android.guesstheword.screens.score.Demo"
+        android:label="demo_fragment"
+        tools:layout="@layout/score_fragment">
+        <action
+            android:id="@+id/action_restart"
+            app:destination="@+id/game_destination"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@+id/title_destination" />
     </fragment>
 </navigation>

@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import com.example.android.guesstheword.R
@@ -64,20 +66,26 @@ class GameFragment : Fragment() {
     /** Methods for updating the UI **/
 
     private fun updateWordText() {
-        binding.wordText.text = viewModel.word
+        viewModel.word.observe(viewLifecycleOwner, Observer {
+            binding.wordText.text=viewModel.word.value
+        })
+        //binding.wordText.text = viewModel.word
 
     }
 
     private fun updateScoreText() {
-        binding.scoreText.text = viewModel.score.toString()
+        viewModel.score.observe(viewLifecycleOwner, Observer {
+            binding.scoreText.text = viewModel.score.value.toString()
+        })
+       // binding.scoreText.text = viewModel.score.toString()
     }
 
     /**
      * Called when the game is finished
      */
     private fun gameFinished() {
-        val action = GameFragmentDirections.actionGameToScore()
-        action.score = viewModel.score
+        val action = GameFragmentDirections.actionGameToDemo()
+        //action.score = viewModel.score.value!!
         NavHostFragment.findNavController(this).navigate(action)
     }
 }
